@@ -25,6 +25,12 @@ const appRoutes: Routes = [
 ];
 @NgModule({
   declarations: [
+    RootComponent,
+    DashboardComponent,
+    Chart1Component,
+    Chart2Component,
+    TableComponent,
+    FormComponent,
     AppComponent,
     HomeComponent,
     GraphComponent,
@@ -34,17 +40,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    GraphQLModule,
     RouterModule.forRoot(
      appRoutes,
      { enableTracing: true } // <-- debugging purposes only
-   ),
-    GraphQLModule,
-    RootComponent,
-    DashboardComponent,
-    Chart1Component,
-    Chart2Component,
-    TableComponent,
-    FormComponent
+   )
   ],
   providers: [],
   bootstrap: [RootComponent]
