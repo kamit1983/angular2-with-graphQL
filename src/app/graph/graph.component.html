@@ -1,0 +1,24 @@
+<h1>Charts</h1>
+<div>
+  <h2>Donut</h2>
+  <angular-d3-donut [id]="donutChartId" [data]="donutChartData"></angular-d3-donut>
+</div>
+<div>
+  <h2>Pie</h2>
+  <angular-d3-pie [id]="pieChartId" [data]="pieChartData"></angular-d3-pie>
+</div>
+<div>
+  <h2>Bar Charts</h2>
+  <angular-d3-bar [id]="singleBar" [data]="barChartData" [dataColumns]="singleBarData" [colors]="colors" [yAxisTicks]=10 [width]=400
+    [height]=200 [transitionDuration]=1000 [transitionDelay]=30 [barWidth]="'16px'"></angular-d3-bar>
+</div>
+<div>
+  <!-- <h2>Stacked Bar Chart</h2> -->
+  <angular-d3-bar [id]="multipleBar" [data]="barChartData" [dataColumns]="stackedBarData" [colors]="colors" [yAxisTicks]=10
+    [width]=400 [height]=200 [transitionDuration]=1000 [transitionDelay]=30 [barWidth]="'16px'"></angular-d3-bar>
+</div>
+<div>
+  <!-- <h2>Multi Stacked Bar Chart</h2> -->
+  <angular-d3-bar [id]="stackedBar" [data]="barChartData" [dataColumns]="multiStackedBarData" [colors]="colors" [yAxisTicks]=10
+    [width]=400 [height]=200 [transitionDuration]=1000 [transitionDelay]=30 [barWidth]="'16px'"></angular-d3-bar>
+</div>

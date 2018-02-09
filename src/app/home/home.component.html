@@ -4,8 +4,10 @@
 			<h1 *ngIf="showGrid" class="jumbotron text-center"> I am Grid......!!
 			</h1>
 
-			<h1 *ngIf="showCrud" class="jumbotron text-center"> I am Graph...!!
-			</h1>
+			<div *ngIf="showCrud"> 
+				
+				<app-graph #appGraph></app-graph>
+			</div>
 
 			<h1 *ngIf="showForm" class="jumbotron text-center"> I am Editor...!!
 			</h1>
