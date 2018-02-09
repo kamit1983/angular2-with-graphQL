@@ -1,0 +1,13 @@
+.viewer-conainer{
+	float: right;
+}
+
+.collapsed-viewer{
+	height: 100%;
+	background-color:#EfEFEF;
+}
+
+.expanded-viewer{
+	height: 100%;
+	background-color:#ddd;
+}

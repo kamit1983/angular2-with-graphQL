@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 content">
+	    <div class="jumbotron text-center white">
+			<img src="../assets/images/accion_labs.png"/>
+		</div>
+        <p class="content-item text-center effect-box" *ngFor="let item of contentList" (click)="showContent(item)">{{item}}</p>
+    </div>
+    <div class="col-sm-9">
+		<h1 *ngIf="!showVar" class="jumbotron text-center">Welcome Guests...!!</h1>
+		<app-home #appHome [showMePartially]="showVar"></app-home>
+    </div>
+  </div>
+</div>

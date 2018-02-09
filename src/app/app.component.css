@@ -1,0 +1,52 @@
+.content{
+	background-color: #bd5d38;
+}
+
+.white{
+	background-color:white;
+	padding: 2px;
+	margin-top: 10px;
+}
+
+.content-item{
+	color: white;
+	margin: 85px 2px;
+	cursor: pointer;
+}
+
+/*effect-box*/
+p.effect-box:after,
+p.effect-box:before {
+	content: '';
+	position: absolute;
+	left: 74px;
+	display: inline-block;
+	height: 2em;
+	width: 50%;
+	margin-top: -4px;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	
+}
+
+p.effect-box:before {
+  border-left: 2px solid;
+  border-right: 2px solid;
+  -webkit-transform: scale(1,0);
+	transform: scale(1,0);
+}
+
+p.effect-box:after {
+  border-bottom: 2px solid;
+  border-top: 2px solid;
+  -webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+p.effect-box:hover:after,
+p.effect-box:hover:before {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
