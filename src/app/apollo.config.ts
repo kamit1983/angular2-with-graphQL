@@ -19,7 +19,7 @@ export class GraphQLModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
 
     // The Simple API to be added below
-    const uri = 'http://50.112.198.106:4000/graphql';
+    const uri = 'http://50.112.198.106:4000/graphql';//'http://localhost:4000';//
     const http = httpLink.create({ uri });
 
     // 6
