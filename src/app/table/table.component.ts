@@ -3,11 +3,8 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
 const Profiles = gql`query{
-  profiles {
-    id,
-      provider,
-      name,
-      email
+  profiles(pageLength: 50) {
+    name
   }
 }`;
 const createProfile = gql`
@@ -36,10 +33,7 @@ const createProfile = gql`
       _firstCreatedTimestamp: $_firstCreatedTimestamp,
       _lastUpdatedTimestamp: $_lastUpdatedTimestamp
 }) {
-  id,
-  provider,
-  name,
-  email
+  name
     }
   }
 `;
@@ -49,31 +43,29 @@ const createProfile = gql`
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  private profiles: any = [];
+  private data: any = [];
   constructor(private apollo: Apollo) {}
 
   ngOnInit() {
   }
   fetch(){
-    let self = this;
     this.apollo.watchQuery<any>({
       query: Profiles
     })
       .valueChanges
       .subscribe(({data}) => {
-        self.profiles = data.profiles.map(p=>{
+        this.data = data.profiles.map(p=>{
           return p;
         });
       });
   }
   create(){
-    let self = this;
       this.apollo.mutate({
       mutation: createProfile,
       variables: {
-        id:"3425",
+        id:Math.round(Math.random()*10000),
         provider: "a",
-        name:"Amit" + self.profiles.length,
+        name:"Amit" + Math.round(Math.random()*10000),
         email:"Amit@gmail.com",
         profileStatus: "active",
         designation:1,
@@ -86,7 +78,7 @@ export class TableComponent implements OnInit {
         _lastUpdatedTimestamp: "01-01-2018"
       }
     }).subscribe(({ data }) => {
-      this.profiles.push(data.createProfile);
+      this.data.push(data.createProfile);
     },(error) => {
       console.log('there was an error sending the query', error);
     });
