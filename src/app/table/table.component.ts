@@ -1,7 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import { NgModel } from '@angular/forms';
 
+const Demos = gql`query{
+  demos(pageLength: 50) {
+    id,
+	_firstCreatedTimestamp,
+	categories,
+	tagline
+  }
+}`;
 const Profiles = gql`query{
   profiles(pageLength: 50) {
     name
@@ -14,9 +23,9 @@ const createProfile = gql`
       $email: String!,
       $profileStatus: String!,
       $designation: Int!,
-    $aiclevel: String!,
-    $skills: SKILLSINPUT!,
-    $_firstCreatedBy: String!,
+	  $aiclevel: String!,
+      $skills: SKILLSINPUT!,
+      $_firstCreatedBy: String!,
       $_lastUpdatedBy: String!,
       $_firstCreatedTimestamp: String!,
       $_lastUpdatedTimestamp: String!
@@ -26,9 +35,9 @@ const createProfile = gql`
       email: $email,
       profileStatus: $profileStatus,
       designation: $designation,
-    aiclevel: $aiclevel,
-    skills: $skills,
-    _firstCreatedBy: $_firstCreatedBy,
+	  aiclevel: $aiclevel,
+      skills: $skills,
+      _firstCreatedBy: $_firstCreatedBy,
       _lastUpdatedBy: $_lastUpdatedBy,
       _firstCreatedTimestamp: $_firstCreatedTimestamp,
       _lastUpdatedTimestamp: $_lastUpdatedTimestamp
@@ -44,10 +53,15 @@ const createProfile = gql`
 })
 export class TableComponent implements OnInit {
   private data: any = [];
+  private cars: any[]= [];
+  private cols: any[] =[];
+  private demoData: any[] =[];
+  private render : boolean = false;
+  yearFilter: number;
+  yearTimeout: any;
   constructor(private apollo: Apollo) {}
 
-  ngOnInit() {
-  }
+ 
   fetch(){
     this.apollo.watchQuery<any>({
       query: Profiles
@@ -55,9 +69,34 @@ export class TableComponent implements OnInit {
       .valueChanges
       .subscribe(({data}) => {
         this.data = data.profiles.map(p=>{
+		  console.log(p);
           return p;
         });
       });
+  }
+  
+	getDemoData() {
+		this.apollo.watchQuery<any>({
+			query: Demos
+		})
+		.valueChanges
+		.subscribe(({data}) => {
+			this.cars = [];
+			this.cars = data.demos.map(d=>{
+				return d;
+			});
+			this.render = true;
+		});
+	}
+  
+  ngOnInit() {	  
+	  this.cols = [
+            { field: 'id', header: 'Id' },
+            { field: '_firstCreatedTimestamp', header: 'Created Date' },
+            { field: 'categories', header: 'Categories' },
+            { field: 'tagline', header: 'Tagline' }
+        ]; 
+		this.getDemoData();
   }
   create(){
       this.apollo.mutate({
@@ -83,4 +122,14 @@ export class TableComponent implements OnInit {
       console.log('there was an error sending the query', error);
     });
   }
+  
+  onYearChange(event, dt) {
+        if (this.yearTimeout) {
+            clearTimeout(this.yearTimeout);
+        }
+
+        this.yearTimeout = setTimeout(() => {
+            dt.filter(event.value, 'year', 'gt');
+        }, 250);
+    }
 }

@@ -18,6 +18,9 @@ import { Chart2Component } from './chart2/chart2.component';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
 import { EditorComponent } from './editor/editor.component';
+import {TableModule} from 'primeng/table';
+import { FormsModule } from '@angular/forms';
+
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -47,8 +50,13 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     GraphQLModule,
+<<<<<<< HEAD
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
+=======
+	FormsModule,
+	TableModule,
+>>>>>>> table changes.
     RouterModule.forRoot(
      appRoutes,
      { enableTracing: true } // <-- debugging purposes only
