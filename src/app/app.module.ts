@@ -51,6 +51,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    NvD3Module,
     GraphQLModule,
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
