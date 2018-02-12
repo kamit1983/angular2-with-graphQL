@@ -22,6 +22,7 @@ import { EditorComponent } from './editor/editor.component';
 import {TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { LinechartComponent } from './linechart/linechart.component';
+import { DiscreteBarComponent } from './discrete-bar/discrete-bar.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     PieChartComponent,
     BarChartComponent,
     EditorComponent,
-    LinechartComponent
+    LinechartComponent,
+    DiscreteBarComponent
   ],
   imports: [
     BrowserModule,
