@@ -7,8 +7,9 @@ import { GraphComponent } from './graph/graph.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
-
-
+import { NvD3Module } from 'ng2-nvd3';
+import 'd3';
+import 'nvd3';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RootComponent } from './root/root.component';
@@ -20,7 +21,7 @@ import { FormComponent } from './form/form.component';
 import { EditorComponent } from './editor/editor.component';
 import {TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
-
+import { LinechartComponent } from './linechart/linechart.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -45,18 +46,16 @@ const appRoutes: Routes = [
     DoughnutChartComponent,
     PieChartComponent,
     BarChartComponent,
-    EditorComponent
+    EditorComponent,
+    LinechartComponent
   ],
   imports: [
     BrowserModule,
     GraphQLModule,
-<<<<<<< HEAD
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
-=======
 	FormsModule,
 	TableModule,
->>>>>>> table changes.
     RouterModule.forRoot(
      appRoutes,
      { enableTracing: true } // <-- debugging purposes only
