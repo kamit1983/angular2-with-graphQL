@@ -22,6 +22,7 @@ import { EditorComponent } from './editor/editor.component';
 import {TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { LinechartComponent } from './linechart/linechart.component';
+import { CollaboratorsComponent } from './collaborators/collaborators.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'chart1',      component: Chart1Component },
   { path: 'chart2',      component: Chart2Component },
   { path: 'editor',     component: EditorComponent},
+  { path: 'collaborators',     component: CollaboratorsComponent},
   { path: '**', component: DashboardComponent}//PageNotFoundComponent }
 ];
 @NgModule({
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     PieChartComponent,
     BarChartComponent,
     EditorComponent,
-    LinechartComponent
+    LinechartComponent,
+    CollaboratorsComponent
   ],
   imports: [
     BrowserModule,
