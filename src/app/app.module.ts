@@ -6,6 +6,9 @@ import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'an
 import { GraphComponent } from './graph/graph.component';
 import { RouterModule, Routes } from '@angular/router';
 
+import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
+
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RootComponent } from './root/root.component';
@@ -14,6 +17,7 @@ import { Chart1Component } from './chart1/chart1.component';
 import { Chart2Component } from './chart2/chart2.component';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
+import { EditorComponent } from './editor/editor.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -21,6 +25,7 @@ const appRoutes: Routes = [
   { path: 'forms',      component: FormComponent },
   { path: 'chart1',      component: Chart1Component },
   { path: 'chart2',      component: Chart2Component },
+  { path: 'editor',     component: EditorComponent},
   { path: '**', component: DashboardComponent}//PageNotFoundComponent }
 ];
 @NgModule({
@@ -36,11 +41,14 @@ const appRoutes: Routes = [
     GraphComponent,
     DoughnutChartComponent,
     PieChartComponent,
-    BarChartComponent
+    BarChartComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
     GraphQLModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
     RouterModule.forRoot(
      appRoutes,
      { enableTracing: true } // <-- debugging purposes only

@@ -1,0 +1,8 @@
+.preview-label {
+  text-decoration: underline;
+}
+
+.preview {
+  border: 1px solid silver;
+  padding: 15px;
+}
