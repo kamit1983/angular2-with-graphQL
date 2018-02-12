@@ -23,13 +23,20 @@ import {TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { LinechartComponent } from './linechart/linechart.component';
 import { CollaboratorsComponent } from './collaborators/collaborators.component';
+import { DiscreteBarComponent } from './discrete-bar/discrete-bar.component';
+import { PieComponent } from './pie/pie.component';
+import { MultiBarComponent } from './multi-bar/multi-bar.component';
+import { DonutComponent } from './donut/donut.component';
+import { MultiBarHorizontalChartComponent } from './multi-bar-horizontal-chart/multi-bar-horizontal-chart.component';
+import { BoxPlotChartComponent } from './box-plot-chart/box-plot-chart.component';
+import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'tables',      component: TableComponent },
   { path: 'forms',      component: FormComponent },
-  { path: 'chart1',      component: Chart1Component },
-  { path: 'chart2',      component: Chart2Component },
+  { path: 'charts',      component: Chart1Component },
+  { path: 'graphs',      component: Chart2Component },
   { path: 'editor',     component: EditorComponent},
   { path: 'collaborators',     component: CollaboratorsComponent},
   { path: '**', component: DashboardComponent}//PageNotFoundComponent }
@@ -50,7 +57,15 @@ const appRoutes: Routes = [
     BarChartComponent,
     EditorComponent,
     LinechartComponent,
-    CollaboratorsComponent
+
+    CollaboratorsComponent,
+    DiscreteBarComponent,
+    PieComponent,
+    MultiBarComponent,
+    DonutComponent,
+    MultiBarHorizontalChartComponent,
+    BoxPlotChartComponent,
+    ForceDirectedGraphComponent
   ],
   imports: [
     BrowserModule,
