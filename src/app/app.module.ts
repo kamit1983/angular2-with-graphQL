@@ -5,7 +5,7 @@ import {GraphQLModule} from './apollo.config';
 import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'angular-d3-charts'; // this is needed!
 import { GraphComponent } from './graph/graph.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import "froala-editor/js/froala_editor.pkgd.min.js";
 import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
 import { NvD3Module } from 'ng2-nvd3';
 import 'd3';
