@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { GraphQLModule } from './apollo.config';
+import { HttpClientModule } from '@angular/common/http';
+import {GraphQLModule} from './apollo.config';
 import { RouterModule, Routes } from '@angular/router';
 import "froala-editor/js/froala_editor.pkgd.min.js";
 import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
@@ -37,9 +37,9 @@ const appRoutes: Routes = [
   { path: 'charts', component: ChartsComponent },
   { path: 'graphs', component: GraphsComponent },
   { path: 'editor', component: EditorComponent },
-  { path: 'collaborators', component: CollaboratorsComponent },
   { path: 'reactiveforms', component: ReactiveFormComponent },
-  { path: '**', component: DashboardComponent }//PageNotFoundComponent }
+  { path: 'contributers',     component: CollaboratorsComponent},
+  { path: '**', component: DashboardComponent}//PageNotFoundComponent }
 ];
 @NgModule({
   declarations: [
@@ -65,6 +65,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NvD3Module,
     GraphQLModule,
     FroalaEditorModule.forRoot(),

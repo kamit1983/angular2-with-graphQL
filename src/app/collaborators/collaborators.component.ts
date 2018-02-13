@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-collaborators',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./collaborators.component.css']
 })
 export class CollaboratorsComponent implements OnInit {
-
-  constructor() { }
+  private contributors: any = [];
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    let uri = 'https://api.github.com/repos/kamit1983/angular2-with-graphQL/stats/contributors';
+    this.http.get(uri).subscribe(data =>  {
+      this.contributors = data;
+    });
   }
 
 }

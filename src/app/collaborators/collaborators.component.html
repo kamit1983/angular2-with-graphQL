@@ -1,13 +1,29 @@
 <div id="page-wrapper">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Collaborators</h1>
+      <h1 class="page-header">Contributors</h1>
     </div>
     <!-- /.col-lg-12 -->
   </div>
   <!-- /.row -->
   <div class="row">
-    <h3>Under Construction!!</h3>
+    <div class="col-lg-6" *ngFor="let c of contributors">
+      <div class="panel panel-yellow">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-4">
+              <img style="height:100px;" [src]="c.author.avatar_url" alt="avatar" class="img-circle">
+            </div>
+            <div class="col-xs-8 text-right">
+              <div>{{c.total}} Contributions</div>
+              <div>+{{c.weeks[0].a + c.weeks[1].a}} lines added</div>
+              <div>-{{c.weeks[0].d + c.weeks[1].d}} lines deleted</div>
+              <div>by {{c.author.login}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 
