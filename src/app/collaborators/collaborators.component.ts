@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./collaborators.component.css']
 })
 export class CollaboratorsComponent implements OnInit {
-  private contributors: any = [];
+  public contributors: any = [];
   constructor(private http: HttpClient) { }
 
   ngOnInit() {

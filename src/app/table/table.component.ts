@@ -52,16 +52,16 @@ const createProfile = gql`
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  private data: any = [];
-  private cars: any[]= [];
-  private cols: any[] =[];
-  private demoData: any[] =[];
-  private render : boolean = false;
+  public data: any = [];
+  public cars: any[]= [];
+  public cols: any[] =[];
+  public demoData: any[] =[];
+  public render : boolean = false;
   yearFilter: number;
   yearTimeout: any;
   constructor(private apollo: Apollo) {}
 
- 
+
   fetch(){
     this.apollo.watchQuery<any>({
       query: Profiles
@@ -74,7 +74,7 @@ export class TableComponent implements OnInit {
         });
       });
   }
-  
+
 	getDemoData() {
 		this.apollo.watchQuery<any>({
 			query: Demos
@@ -88,14 +88,14 @@ export class TableComponent implements OnInit {
 			this.render = true;
 		});
 	}
-  
-  ngOnInit() {	  
+
+  ngOnInit() {
 	  this.cols = [
             { field: 'id', header: 'Id' },
             { field: '_firstCreatedTimestamp', header: 'Created Date' },
             { field: 'categories', header: 'Categories' },
             { field: 'tagline', header: 'Tagline' }
-        ]; 
+        ];
 		this.getDemoData();
   }
   create(){
@@ -122,7 +122,7 @@ export class TableComponent implements OnInit {
       console.log('there was an error sending the query', error);
     });
   }
-  
+
   onYearChange(event, dt) {
         if (this.yearTimeout) {
             clearTimeout(this.yearTimeout);
