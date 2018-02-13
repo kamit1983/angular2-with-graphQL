@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {GraphQLModule} from './apollo.config';
-import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'angular-d3-charts'; // this is needed!
-import { GraphComponent } from './graph/graph.component';
+import { GraphQLModule } from './apollo.config';
 import { RouterModule, Routes } from '@angular/router';
 import "froala-editor/js/froala_editor.pkgd.min.js";
 import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
@@ -14,50 +12,47 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RootComponent } from './root/root.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { Chart1Component } from './chart1/chart1.component';
-import { Chart2Component } from './chart2/chart2.component';
+import { ChartsComponent } from './charts/charts.component';
+import { GraphsComponent } from './graphs/graphs.component';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
 import { EditorComponent } from './editor/editor.component';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
 import { FormsModule } from '@angular/forms';
-import { LinechartComponent } from './linechart/linechart.component';
+import { LinechartComponent } from './charts/linechart/linechart.component';
 import { CollaboratorsComponent } from './collaborators/collaborators.component';
-import { DiscreteBarComponent } from './discrete-bar/discrete-bar.component';
-import { PieComponent } from './pie/pie.component';
-import { MultiBarComponent } from './multi-bar/multi-bar.component';
-import { DonutComponent } from './donut/donut.component';
-import { MultiBarHorizontalChartComponent } from './multi-bar-horizontal-chart/multi-bar-horizontal-chart.component';
-import { BoxPlotChartComponent } from './box-plot-chart/box-plot-chart.component';
-import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
+import { DiscreteBarComponent } from './charts/discrete-bar/discrete-bar.component';
+import { PieComponent } from './charts/pie/pie.component';
+import { MultiBarComponent } from './charts/multi-bar/multi-bar.component';
+import { DonutComponent } from './charts/donut/donut.component';
+import { MultiBarHorizontalChartComponent } from './charts/multi-bar-horizontal-chart/multi-bar-horizontal-chart.component';
+import { BoxPlotChartComponent } from './charts/box-plot-chart/box-plot-chart.component';
+import { ForceDirectedGraphComponent } from './graphs/force-directed-graph/force-directed-graph.component';
+import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'tables',      component: TableComponent },
-  { path: 'forms',      component: FormComponent },
-  { path: 'charts',      component: Chart1Component },
-  { path: 'graphs',      component: Chart2Component },
-  { path: 'editor',     component: EditorComponent},
-  { path: 'collaborators',     component: CollaboratorsComponent},
-  { path: '**', component: DashboardComponent}//PageNotFoundComponent }
+  { path: 'tables', component: TableComponent },
+  { path: 'forms', component: FormComponent },
+  { path: 'charts', component: ChartsComponent },
+  { path: 'graphs', component: GraphsComponent },
+  { path: 'editor', component: EditorComponent },
+  { path: 'collaborators', component: CollaboratorsComponent },
+  { path: 'reactiveforms', component: ReactiveFormComponent },
+  { path: '**', component: DashboardComponent }//PageNotFoundComponent }
 ];
 @NgModule({
   declarations: [
     RootComponent,
     DashboardComponent,
-    Chart1Component,
-    Chart2Component,
+    ChartsComponent,
+    GraphsComponent,
     TableComponent,
     FormComponent,
     AppComponent,
     HomeComponent,
-    GraphComponent,
-    DoughnutChartComponent,
-    PieChartComponent,
-    BarChartComponent,
     EditorComponent,
     LinechartComponent,
-
     CollaboratorsComponent,
     DiscreteBarComponent,
     PieComponent,
@@ -65,7 +60,8 @@ const appRoutes: Routes = [
     DonutComponent,
     MultiBarHorizontalChartComponent,
     BoxPlotChartComponent,
-    ForceDirectedGraphComponent
+    ForceDirectedGraphComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -73,12 +69,12 @@ const appRoutes: Routes = [
     GraphQLModule,
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
-	FormsModule,
-	TableModule,
+    FormsModule,
+    TableModule,
     RouterModule.forRoot(
-     appRoutes,
-     { enableTracing: true } // <-- debugging purposes only
-   )
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [RootComponent]

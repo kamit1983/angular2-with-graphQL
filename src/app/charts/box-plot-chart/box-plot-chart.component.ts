@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartTypes , AllOptions, AllData } from "../chartDefinition"
+import { ChartTypes , AllOptions, AllData } from "../../chartDefinition"
 @Component({
   selector: 'app-box-plot-chart',
   templateUrl: './box-plot-chart.component.html',
