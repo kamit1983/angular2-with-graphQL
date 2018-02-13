@@ -11,7 +11,7 @@ export class CollaboratorsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    let uri = 'https://api.github.com/repos/kamit1983/angular2-with-graphQL/contributors';
+    let uri = 'https://api.github.com/repos/kamit1983/angular2-with-graphQL/stats/contributors';
     this.http.get(uri).subscribe(data =>  {
       this.contributors = data;
     });
