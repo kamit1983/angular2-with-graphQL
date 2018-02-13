@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import {GraphQLModule} from './apollo.config';
 import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'angular-d3-charts'; // this is needed!
 import { GraphComponent } from './graph/graph.component';
@@ -38,7 +38,7 @@ const appRoutes: Routes = [
   { path: 'charts',      component: Chart1Component },
   { path: 'graphs',      component: Chart2Component },
   { path: 'editor',     component: EditorComponent},
-  { path: 'collaborators',     component: CollaboratorsComponent},
+  { path: 'contributers',     component: CollaboratorsComponent},
   { path: '**', component: DashboardComponent}//PageNotFoundComponent }
 ];
 @NgModule({
@@ -69,6 +69,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NvD3Module,
     GraphQLModule,
     FroalaEditorModule.forRoot(),
