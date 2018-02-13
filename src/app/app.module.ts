@@ -18,7 +18,7 @@ import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
 import { EditorComponent } from './editor/editor.component';
 import { TableModule } from 'primeng/table';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LinechartComponent } from './charts/linechart/linechart.component';
 import { CollaboratorsComponent } from './collaborators/collaborators.component';
 import { DiscreteBarComponent } from './charts/discrete-bar/discrete-bar.component';
@@ -29,6 +29,7 @@ import { MultiBarHorizontalChartComponent } from './charts/multi-bar-horizontal-
 import { BoxPlotChartComponent } from './charts/box-plot-chart/box-plot-chart.component';
 import { ForceDirectedGraphComponent } from './graphs/force-directed-graph/force-directed-graph.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
+import { HeroDetailComponent } from './form/reactive-form/hero-detail/hero-detail.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -61,7 +62,8 @@ const appRoutes: Routes = [
     MultiBarHorizontalChartComponent,
     BoxPlotChartComponent,
     ForceDirectedGraphComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +74,7 @@ const appRoutes: Routes = [
     FroalaViewModule.forRoot(),
     FormsModule,
     TableModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
