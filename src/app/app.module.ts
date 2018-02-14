@@ -8,6 +8,7 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
 import { NvD3Module } from 'ng2-nvd3';
 import 'd3';
 import 'nvd3';
+import 'at.js/dist/js/jquery.atwho';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RootComponent } from './root/root.component';
