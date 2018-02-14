@@ -46,6 +46,7 @@ const appRoutes: Routes = [
   { path: 'reactiveforms', component: ReactiveFormComponent },
   { path: 'contributers',     component: CollaboratorsComponent},
   { path: 'dynamicforms',     component: DynamicFormViewComponent},
+  { path: 'templatedrivenforms',     component: TemplateDrivenFormComponent},
   { path: '**', component: DashboardComponent}//PageNotFoundComponent }
 ];
 @NgModule({
