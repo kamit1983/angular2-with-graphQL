@@ -31,6 +31,10 @@ import { BoxPlotChartComponent } from './charts/box-plot-chart/box-plot-chart.co
 import { ForceDirectedGraphComponent } from './graphs/force-directed-graph/force-directed-graph.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 import { HeroDetailComponent } from './form/reactive-form/hero-detail/hero-detail.component';
+import { DynamicFormComponent } from './form/dynamic-form/dynamic-form.component';
+import { TemplateDrivenFormComponent } from './form/template-driven-form/template-driven-form.component';
+import { DynamicFormQuestionComponent } from './form/dynamic-form/dynamic-form-question.component';
+import { DynamicFormViewComponent } from './form/dynamic-form/dynamic-form-view.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -41,6 +45,7 @@ const appRoutes: Routes = [
   { path: 'editor', component: EditorComponent },
   { path: 'reactiveforms', component: ReactiveFormComponent },
   { path: 'contributers',     component: CollaboratorsComponent},
+  { path: 'dynamicforms',     component: DynamicFormViewComponent},
   { path: '**', component: DashboardComponent}//PageNotFoundComponent }
 ];
 @NgModule({
@@ -64,7 +69,11 @@ const appRoutes: Routes = [
     BoxPlotChartComponent,
     ForceDirectedGraphComponent,
     ReactiveFormComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    DynamicFormComponent,
+    TemplateDrivenFormComponent,
+    DynamicFormQuestionComponent,
+    DynamicFormViewComponent
   ],
   imports: [
     BrowserModule,
