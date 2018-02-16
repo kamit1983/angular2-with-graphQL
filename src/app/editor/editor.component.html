@@ -8,6 +8,35 @@
   <!-- /.row -->
   <div class="row">
     <div class="col-lg-12">
+      <h2 class="preview-label">Text Editing</h2>
+      <!-- <textarea [froalaEditor]></textarea> -->
+      <div [froalaEditor]="textOptions" [(froalaModel)]="textContent"></div>
+      <br />
+      <h3 class="preview-label">Preview:</h3>
+      <div class="preview">
+        <div [froalaView]="textContent"></div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <h2 class="preview-label">Image</h2>
+      <div [froalaEditor]="imgOptions" [(froalaModel)]="imgContent"></div>
+      <br />
+      <h3 class="preview-label">Preview:</h3>
+      <div class="preview">
+        <div [froalaView]="imgContent"></div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+        <h2 class="preview-label">Video</h2>
+        <div [froalaEditor]="videoOptions" [(froalaModel)]="videoContent"></div>
+        <br />
+        <h3 class="preview-label">Preview:</h3>
+        <div class="preview">
+          <div [froalaView]="videoContent"></div>
+        </div>
+      </div>
+    <div class="col-lg-12">
+      <h2 class="preview-label">Facebook type mention</h2>
       <div [froalaEditor]="froalaOptions" [(froalaModel)]="editorContent"></div>
       <br />
       <h3 class="preview-label">Preview:</h3>
