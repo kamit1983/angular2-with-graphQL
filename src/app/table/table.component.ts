@@ -55,8 +55,15 @@ export class TableComponent implements OnInit {
   public data: any = [];
   public cars: any[]= [];
   public cols: any[] =[];
+  public dataSource: any[]= [];
   public demoData: any[] =[];
+  public carsData: any[] =[];
+  public totalRecords: number;
+  public lazyLoadingData: any[] =[];
   public render : boolean = false;
+  public loading: boolean = false;
+  public exportData: any[] =[];
+  public selectedCars: any[]=[];
   yearFilter: number;
   yearTimeout: any;
   constructor(private apollo: Apollo) {}
@@ -82,9 +89,14 @@ export class TableComponent implements OnInit {
 		.valueChanges
 		.subscribe(({data}) => {
 			this.cars = [];
+			this.carsData =[];
+			this.exportData = [];
 			this.cars = data.demos.map(d=>{
 				return d;
 			});
+			this.carsData = JSON.parse(JSON.stringify(this.cars));
+			this.exportData = JSON.parse(JSON.stringify(this.cars));
+			//this.totalRecords = this.lazyLoadingData.length;
 			this.render = true;
 		});
 	}
@@ -96,7 +108,12 @@ export class TableComponent implements OnInit {
             { field: 'categories', header: 'Categories' },
             { field: 'tagline', header: 'Tagline' }
         ];
+		//this.carsData = JSON.parse(JSON.stringify(this.cars));
 		this.getDemoData();
+		setTimeout(() => {
+			this.carsData = JSON.parse(JSON.stringify(this.cars));
+			this.loading = true;
+		});
   }
   create(){
       this.apollo.mutate({
@@ -131,5 +148,27 @@ export class TableComponent implements OnInit {
         this.yearTimeout = setTimeout(() => {
             dt.filter(event.value, 'year', 'gt');
         }, 250);
+    }
+	
+	loadCarsLazy(event: LazyLoadEvent) {
+		console.log(event);
+        this.loading = true;
+        this.apollo.watchQuery<any>({
+			query: Demos
+		})
+		.valueChanges
+		.subscribe(({data}) => {
+			this.dataSource = [];
+			this.dataSource = data.demos.map(d=>{
+				return d;
+			});
+			setTimeout(() => {
+            if (this.dataSource) {
+                this.lazyLoadingData = this.dataSource.slice(event.first, (event.first + event.rows));
+                this.loading = false;
+            }
+        }, 1000);
+		});
+        
     }
 }

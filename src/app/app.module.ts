@@ -19,6 +19,7 @@ import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
 import { EditorComponent } from './editor/editor.component';
 import { TableModule } from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LinechartComponent } from './charts/linechart/linechart.component';
 import { CollaboratorsComponent } from './collaborators/collaborators.component';
@@ -85,6 +86,7 @@ const appRoutes: Routes = [
     FroalaViewModule.forRoot(),
     FormsModule,
     TableModule,
+	ButtonModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
