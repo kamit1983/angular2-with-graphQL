@@ -132,7 +132,7 @@
   <div class="row">
 		<div class="col-lg-12">
 			<h3>Export</h3>
-			<p-table #dt [columns]="cols" [value]="exportData" selectionMode="multiple" [(selection)]="selectedCars">
+			<p-table #dt [columns]="cols" [value]="exportData" selectionMode="multiple" [(selection)]="selectedCars" [paginator]="true" [rows]="5">
     <ng-template pTemplate="caption">
         <div class="ui-helper-clearfix">
             <button type="button" pButton icon="fa-file-o" iconPos="left" label="All Data" (click)="dt.exportCSV()" style="float:left"></button>
