@@ -56,12 +56,16 @@ export class TableComponent implements OnInit {
   public cars: any[]= [];
   public cols: any[] =[];
   public dataSource: any[]= [];
+  public dataSourceVs: any[]= [];
   public demoData: any[] =[];
   public carsData: any[] =[];
   public totalRecords: number;
+  public totalRecordsVs: number;
   public lazyLoadingData: any[] =[];
+  public virtualScrollData: any[] =[];
   public render : boolean = false;
   public loading: boolean = false;
+  public loadingVs: boolean = true;
   public exportData: any[] =[];
   public selectedCars: any[]=[];
   yearFilter: number;
@@ -96,7 +100,6 @@ export class TableComponent implements OnInit {
 			});
 			this.carsData = JSON.parse(JSON.stringify(this.cars));
 			this.exportData = JSON.parse(JSON.stringify(this.cars));
-			//this.totalRecords = this.lazyLoadingData.length;
 			this.render = true;
 		});
 	}
@@ -108,7 +111,6 @@ export class TableComponent implements OnInit {
             { field: 'categories', header: 'Categories' },
             { field: 'tagline', header: 'Tagline' }
         ];
-		//this.carsData = JSON.parse(JSON.stringify(this.cars));
 		this.getDemoData();
 		setTimeout(() => {
 			this.carsData = JSON.parse(JSON.stringify(this.cars));
@@ -167,7 +169,29 @@ export class TableComponent implements OnInit {
                 this.loading = false;
             }
         });
-		});
-        
+		});        
     }
+	
+	loadCarsLazyVs(event){
+		console.log(event);
+		this.loadingVs = true;
+		this.apollo.watchQuery<any>({
+			query: Demos
+		})
+		.valueChanges
+		.subscribe(({data}) => {
+			this.dataSourceVs = [];
+			this.dataSourceVs = data.demos.map(d=>{
+				return d;
+			});
+			this.totalRecordsVs = this.dataSourceVs.length;
+			console.log(this.dataSourceVs);
+			setTimeout(() => {
+				if (this.dataSourceVs) {
+					this.virtualScrollData = this.dataSource.slice(event.first, (event.first + event.rows));
+					this.loadingVs = false;
+				}
+			});
+		});
+	}
 }

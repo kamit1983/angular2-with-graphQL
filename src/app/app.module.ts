@@ -20,6 +20,7 @@ import { FormComponent } from './form/form.component';
 import { EditorComponent } from './editor/editor.component';
 import { TableModule } from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
+import {DataTableModule} from 'primeng/datatable';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LinechartComponent } from './charts/linechart/linechart.component';
 import { CollaboratorsComponent } from './collaborators/collaborators.component';
@@ -87,6 +88,7 @@ const appRoutes: Routes = [
     FormsModule,
     TableModule,
 	ButtonModule,
+	DataTableModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
