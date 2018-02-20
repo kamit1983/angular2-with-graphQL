@@ -24,5 +24,10 @@ export class RootComponent implements OnInit {
 	  event.stopPropagation();
 	  this.formsClicked = true;
   }
+  
+  collapseAll(){
+	  this.chartAndGraphClicked = false;
+	  this.formsClicked = false;
+  }
 
 }
