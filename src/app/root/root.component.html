@@ -238,34 +238,34 @@
         <li>
           <a routerLink="/dashboard" routerLinkActive="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
         </li>
-        <li>
-          <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Chart and Graph<span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-            <li>
+        <li (click)="chartAndGraphClicked=!chartAndGraphClicked;">
+          <a><i class="fa fa-bar-chart-o fa-fw"></i> Chart and Graph<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level" *ngIf="chartAndGraphClicked">
+            <li (click)="chartClicked($event)">
               <a routerLink="/charts" routerLinkActive="active">Charts</a>
             </li>
-            <li>
+            <li (click)="chartClicked($event)">
               <a routerLink="/graphs" routerLinkActive="active">Graphs</a>
             </li>
           </ul>
           <!-- /.nav-second-level -->
         </li>
-        <li>
+        <li (click)="formsClicked=false;chartAndGraphClicked=false;">
           <a routerLink="/tables" routerLinkActive="active"><i class="fa fa-table fa-fw"></i> Tables</a>
         </li>
-        <li>
-          <a href="#"><i class="fa fa-edit fa-fw"></i> Forms<span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-            <li>
+        <li (click)="formsClicked=!formsClicked;">
+          <a><i class="fa fa-edit fa-fw"></i> Forms<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level" *ngIf="formsClicked">
+            <li (click)="formMenuClicked($event)">
               <a routerLink="/forms" routerLinkActive="active"> Html Forms</a>
             </li>
-            <li>
+            <li (click)="formMenuClicked($event)">
               <a routerLink="/templatedrivenforms" routerLinkActive="active"> Template Driven Forms</a>
             </li>
-            <li>
+            <li (click)="formMenuClicked($event)">
               <a routerLink="/reactiveforms" routerLinkActive="active"> Reactive Forms</a>
             </li>
-            <li>
+            <li (click)="formMenuClicked($event)">
               <a routerLink="/dynamicforms" routerLinkActive="active"> Dynamic Forms</a>
             </li>
           </ul>

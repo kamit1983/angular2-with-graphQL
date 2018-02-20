@@ -8,8 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class RootComponent implements OnInit {
 
   constructor() { }
-
+  
+  private chartAndGraphClicked : boolean = false;
+  private formsClicked : boolean = false;
+  
   ngOnInit() {
+  }
+  
+  chartClicked(event) {
+	  event.stopPropagation();
+	  this.chartAndGraphClicked = true;
+  }
+  
+  formMenuClicked(event){
+	  event.stopPropagation();
+	  this.formsClicked = true;
   }
 
 }

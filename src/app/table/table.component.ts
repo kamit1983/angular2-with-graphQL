@@ -150,8 +150,7 @@ export class TableComponent implements OnInit {
         }, 250);
     }
 	
-	loadCarsLazy(event: LazyLoadEvent) {
-		console.log(event);
+	loadCarsLazy(event) {
         this.loading = true;
         this.apollo.watchQuery<any>({
 			query: Demos
@@ -167,7 +166,7 @@ export class TableComponent implements OnInit {
                 this.lazyLoadingData = this.dataSource.slice(event.first, (event.first + event.rows));
                 this.loading = false;
             }
-        }, 1000);
+        });
 		});
         
     }
