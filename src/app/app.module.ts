@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import {GraphQLModule} from './apollo.config';
 import { RouterModule, Routes } from '@angular/router';
 import "froala-editor/js/froala_editor.pkgd.min.js";
@@ -37,6 +38,7 @@ import { DynamicFormComponent } from './form/dynamic-form/dynamic-form.component
 import { TemplateDrivenFormComponent } from './form/template-driven-form/template-driven-form.component';
 import { DynamicFormQuestionComponent } from './form/dynamic-form/dynamic-form-question.component';
 import { DynamicFormViewComponent } from './form/dynamic-form/dynamic-form-view.component';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -80,6 +82,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
     HttpClientModule,
     NvD3Module,
     GraphQLModule,
