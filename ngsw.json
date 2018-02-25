@@ -9,8 +9,8 @@
       "urls": [
         "https://kamit1983.github.io/angular2-with-graphQL/favicon.ico",
         "https://kamit1983.github.io/angular2-with-graphQL/index.html",
-        "https://kamit1983.github.io/angular2-with-graphQL/inline.cda89451de40e6d9f3c5.bundle.js",
-        "https://kamit1983.github.io/angular2-with-graphQL/main.148e5baf65aecc87fd9a.bundle.js",
+        "https://kamit1983.github.io/angular2-with-graphQL/inline.2b88e962b89df973ad03.bundle.js",
+        "https://kamit1983.github.io/angular2-with-graphQL/main.c4cfbfde84006e9b9c27.bundle.js",
         "https://kamit1983.github.io/angular2-with-graphQL/polyfills.f20484b2fa4642e0dca8.bundle.js",
         "https://kamit1983.github.io/angular2-with-graphQL/scripts.cbcf6540f436a64fe68b.bundle.js",
         "https://kamit1983.github.io/angular2-with-graphQL/styles.702b622a33b10264ac54.bundle.css"
@@ -57,9 +57,9 @@
     }
   ],
   "hashTable": {
-    "https://kamit1983.github.io/angular2-with-graphQL/inline.cda89451de40e6d9f3c5.bundle.js": "9dad0dda2de37967f0d31ef73c92535eb67785a3",
+    "https://kamit1983.github.io/angular2-with-graphQL/inline.2b88e962b89df973ad03.bundle.js": "2e5ba93e018090798970356930786003af49bf02",
     "https://kamit1983.github.io/angular2-with-graphQL/assets/images/Accion_labs.jpeg": "7df77ae6c0f923667f19a069278e4fa26951a1e5",
-    "https://kamit1983.github.io/angular2-with-graphQL/main.148e5baf65aecc87fd9a.bundle.js": "fa2f0166d61b9bb145f711e6905aaf4bf60b7aea",
+    "https://kamit1983.github.io/angular2-with-graphQL/main.c4cfbfde84006e9b9c27.bundle.js": "23fce0e75b03584abf940cd846d17b2849a4a6b0",
     "https://kamit1983.github.io/angular2-with-graphQL/assets/images/accion-labs-logo.png": "a1229dc52db25b767892fd4b4fac902fd5acc4be",
     "https://kamit1983.github.io/angular2-with-graphQL/polyfills.f20484b2fa4642e0dca8.bundle.js": "d76cc4f32bd724990e239dbddea15e2d7313995c",
     "https://kamit1983.github.io/angular2-with-graphQL/assets/images/accion_labs.png": "fb03f21392fd65a198759212fd0f468497ab2fd1",
@@ -67,6 +67,6 @@
     "https://kamit1983.github.io/angular2-with-graphQL/assets/images/logo.png": "699065d3c270721a3e26d4f94505ad20db2ba603",
     "https://kamit1983.github.io/angular2-with-graphQL/styles.702b622a33b10264ac54.bundle.css": "f0bc35e612ead04fb6e7313333f4938c7ccf2219",
     "https://kamit1983.github.io/angular2-with-graphQL/favicon.ico": "b02ffca50f6cc899af1199aa3f98afc9845bc816",
-    "https://kamit1983.github.io/angular2-with-graphQL/index.html": "d88224d30946c1308175de3e3e90bbd64637cbe8"
+    "https://kamit1983.github.io/angular2-with-graphQL/index.html": "ea2f81bc37b03862a26b49f21642f67cd1da4969"
   }
 }
