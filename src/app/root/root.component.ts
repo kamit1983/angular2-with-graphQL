@@ -11,9 +11,14 @@ export class RootComponent implements OnInit {
 
   public chartAndGraphClicked : boolean = false;
   public formsClicked : boolean = false;
+  public rootMenuClicked: boolean = false;
 
   ngOnInit() {
   }
+  // handleRootMenuClicked(event){
+  //   event.stopPropagation();
+	//   this.rootMenuClicked = true;
+  // }
 
   chartClicked(event) {
 	  event.stopPropagation();
