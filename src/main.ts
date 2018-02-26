@@ -11,7 +11,7 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
 .then(() => {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/ngsw-worker.js') ;
+      navigator.serviceWorker.register('/angular2-with-graphQL/ngsw-worker.js') ;
     }
   })
   .catch(err => console.log(err));

@@ -82,7 +82,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
+    environment.production ? ServiceWorkerModule.register('/angular2-with-graphQL/ngsw-worker.js') : [],
     HttpClientModule,
     NvD3Module,
     GraphQLModule,
